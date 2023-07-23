@@ -9,30 +9,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.asm.Entity.Account;
-import com.asm.Services.AccountService;
+import com.asm.Entity.OrderDetail;
+import com.asm.Services.OrderDetailService;
 
 @RestController
-@RequestMapping("api/account")
-public class AccountAPI {
+@RequestMapping("api/orderdetail")
+public class OrderDetailAPI {
 	@Autowired
-	AccountService accountService;
-
+	OrderDetailService detailService;
 	// http method: GET, POST, PUT, DELETE
 
-	// localhost:8085/api/account/all
+	// localhost:8085/api/orderdetail/all
 	@GetMapping("/all")
 	public ResponseEntity<?> doGetAll() {
-		List<Account> account = accountService.findAll();
+		List<OrderDetail> orderDetail = detailService.findAll();
 		// http status code: 200, 201, 202, 400, 401, 403, 404, 500
-		return ResponseEntity.ok(account);
+		return ResponseEntity.ok(orderDetail);
+
 	}
 	
-	@GetMapping("/username={username}")
-	public ResponseEntity<?> getByUsername(@RequestParam("username") String username){
-		Account account = accountService.getAccountByUsername(username);
+	@GetMapping("/id={id}")
+	public ResponseEntity<?> getById(@RequestParam("id") Long id){
+		OrderDetail orderDetail = detailService.getOrderDetailByID(id);
 		// http status code: 200, 201, 202, 400, 401, 403, 404, 500
-		return ResponseEntity.ok(account);
+		return ResponseEntity.ok(orderDetail);
 				
 	}
 }
