@@ -369,6 +369,7 @@ a:focus {
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
   z-index: 3;
+  margin-left:700px;
 }
 
 .slider_section .carousel_btn_box .carousel-control-prev,
