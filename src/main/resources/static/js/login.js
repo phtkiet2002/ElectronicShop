@@ -1,11 +1,11 @@
-let host = "http://localhost:8085/api/product/all"
+let host = "http://localhost:8085/api/account"
 const app = angular.module("app", []);
 app.controller("ctrl", function($scope, $http) {
 	$scope.form = {}
 	$scope.products = []
 
 	$scope.findAll = function() {
-		var url = `${host}/index`;
+		var url = `${host}/all`;
 		$http.get(url).then(resp => {
 			$scope.products = resp.data;
 			console.log("Success", resp)
