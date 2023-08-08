@@ -5,6 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProductController {
 	@RequestMapping("/product/list")
 	public String list() {
-		return "";
+		return "user/product/list";
 	}
 }

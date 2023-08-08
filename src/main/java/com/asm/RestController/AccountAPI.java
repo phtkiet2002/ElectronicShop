@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.asm.Entity.Account;
+import com.asm.Reponsitory.AccountReponsitory;
 import com.asm.Services.AccountService;
 
 @CrossOrigin("*")
@@ -19,6 +20,7 @@ import com.asm.Services.AccountService;
 public class AccountAPI {
 	@Autowired
 	AccountService accountService;
+	
 
 	// http method: GET, POST, PUT, DELETE
 
@@ -29,6 +31,7 @@ public class AccountAPI {
 		// http status code: 200, 201, 202, 400, 401, 403, 404, 500
 		return ResponseEntity.ok(account);
 	}
+	
 	
 	@GetMapping("/username={username}")
 	public ResponseEntity<?> getByUsername(@RequestParam("username") String username){

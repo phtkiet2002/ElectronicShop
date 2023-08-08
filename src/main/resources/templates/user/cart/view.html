@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{/user/layout/layout::areas(~{::title},~{::main})}" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gio Hàng</title>
+     <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet"> <!-- range slider -->
+
+  <!-- font awesome style -->
+  <link href="../css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="../css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../css/responsive.css" rel="stylesheet" />
+    
+</head>
+<body>
+<main>
+		<div class="card card-primary" th:fragment="shopping_cart">
+			<div class="card-header">SHOPPING CART </div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Ảnh</th>
+						<th>Tên sản phẩm</th>
+						<th>Giá</th>
+						<th>Số lượng</th>
+						<th>Tổng</th>
+						<th></th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr ng-repeat="item in cart.items">
+			       <td> <img src="/product/{{item.image}}" width="100px"></td>
+						<!-- <td>{{item.id}}</td> -->
+						<td>{{item.name}}</td>
+						<td>${{item.price | number : 2}}</td>
+						<td><input ng-change="cart.saveToLocalStorage()" ng-model="item.qty" type="number" min="1" class="col-sm-2" ></td>
+						<td>${{item.qty*item.price | number :2 }}</td>
+						<td>
+							<button ng-click="cart.remove(item.id)" class="btn btn-dark">Xóa</button>
+						</td>
+						
+					</tr>
+					<tr>
+					<td colspan="4"><b style="font-size:1.5rem; ">Tổng</b></td>
+					<td colspan="1"><b style="font-size:1.2rem;">${{cart.amount | number:2}}</b></td>
+					<td><button ng-click="cart.clear()" class="btn btn-danger">Xóa tất cả</button></td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+	</main>
+</body>
+</html>
