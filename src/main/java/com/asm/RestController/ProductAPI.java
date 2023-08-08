@@ -29,10 +29,5 @@ public class ProductAPI {
 		return ResponseEntity.ok(product);
 	}
 	
-	@GetMapping("/id={id}")
-	public ResponseEntity<?> getById(@RequestParam("id") Integer id){
-		Product product = productService.getProductByID(id);
-		// http status code: 200, 201, 202, 400, 401, 403, 404, 500
-		return ResponseEntity.ok(product);		
-	}
+	
 }

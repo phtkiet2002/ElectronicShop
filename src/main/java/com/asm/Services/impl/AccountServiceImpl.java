@@ -23,15 +23,17 @@ public class AccountServiceImpl implements AccountService{
 	}
 
 	@Override
-	public Optional<Account> findByUsernameAndPassword(String username, String password) {
+	public Account findById(String username) {
 		// TODO Auto-generated method stub
-		return Optional.empty();
+		return accountReponsitory.findById(username).get();
 	}
 
 	@Override
-	public Account getAccountByUsername(String username) {
+	public List<Account> getAdministrators() {
 		// TODO Auto-generated method stub
-		return null;
+		return accountReponsitory.getAdministrators();
 	}
+
+	
 
 }

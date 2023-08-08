@@ -33,12 +33,6 @@ public class AccountAPI {
 	}
 	
 	
-	@GetMapping("/username={username}")
-	public ResponseEntity<?> getByUsername(@RequestParam("username") String username){
-		Account account = accountService.getAccountByUsername(username);
-		// http status code: 200, 201, 202, 400, 401, 403, 404, 500
-		return ResponseEntity.ok(account);
-				
-	}
+	
 	
 }

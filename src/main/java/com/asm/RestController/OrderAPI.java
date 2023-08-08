@@ -30,11 +30,5 @@ public class OrderAPI {
 
 	}
 	
-	@GetMapping("/id={id}")
-	public ResponseEntity<?> getById(@RequestParam("id") Long id){
-		Order order = orderService.getOrderByID(id);
-		// http status code: 200, 201, 202, 400, 401, 403, 404, 500
-		return ResponseEntity.ok(order);
-				
-	}
+
 }

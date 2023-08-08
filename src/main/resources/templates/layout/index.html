@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<!-- Basic -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- Mobile Metas -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<!-- Site Metas -->
+<link rel="icon" href="../images/fevicon.png" type="image/gif" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Minics</title>
+
+
+<!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+
+<!-- fonts style -->
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap"
+	rel="stylesheet">
+<!-- range slider -->
+
+<!-- font awesome style -->
+<link href="../css/font-awesome.min.css" rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="../css/style.css" rel="stylesheet" />
+<!-- responsive style -->
+<link href="../css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+	<div class="hero_area">
+		<!-- header section strats -->
+		<div th:replace="~{/home/_header :: header}"></div>
+		<!-- end header section -->
+		<!-- slider section -->
+		<div th:replace="~{/home/_header :: section}"></div>
+		<!-- end slider section -->
+	</div>
+
+	<!-- product section -->
+		<div th:replace="~{/product/_product :: section}"></div>
+	<!-- end product section -->
+
+	<!-- about section -->
+		<div th:replace="~{/home/_about :: section}"></div>
+	<!-- end about section -->
+
+	<!-- why us section -->
+		<div th:replace="~{/home/_why :: section}"></div>
+	<!-- end why us section -->
+
+	<!-- client section -->
+		<div th:replace="~{/home/_feedback :: section}"></div>
+	<!-- end client section -->
+
+
+	<!-- footer section -->
+		<div th:replace="~{/home/_footer}"></div>
+	<!-- footer section -->
+
+	<!-- jQery -->
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<!-- bootstrap js -->
+	<script src="../js/bootstrap.js"></script>
+	<!-- custom js -->
+	<script src="../js/custom.js"></script>
+	<script src="../js/indexController.js"></script>
+
+</body>
+
+</html>
