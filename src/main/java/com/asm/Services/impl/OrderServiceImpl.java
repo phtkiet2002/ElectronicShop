@@ -45,6 +45,12 @@ public class OrderServiceImpl implements OrderService{
 		// TODO Auto-generated method stub
 		return orderReponsitory.findById(id).get();
 	}
+
+	@Override
+	public List<Order> findByUsername(String username) {
+		// TODO Auto-generated method stub
+		return orderReponsitory.findByUsername(username);
+	}
 	
 
 }

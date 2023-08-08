@@ -3,14 +3,16 @@ package com.asm.Entity;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.asm.Entity.Authority;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+
 import lombok.Data;
 
 @Data
@@ -28,7 +30,7 @@ public class Account implements Serializable{
 	List<Order> orders;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "account", fetch = jakarta.persistence.FetchType.EAGER)
+	@OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
 	List<Authority> authorities;
 
 	

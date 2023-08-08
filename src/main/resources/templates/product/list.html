@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" 
+        th:replace="~{/layout/index :: dynamic(~{::main})}">
 <head>
 <meta charset="utf-8">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
 </head>
-<body ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl">
+<body>
 	<section class="product_section layout_padding">
 		<div class="container">
 			<div class="heading_container heading_center">
