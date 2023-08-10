@@ -34,19 +34,19 @@ public class Account implements Serializable{
 	List<Authority> authorities;
 
 	
-	public Account(String username, String password, String fullname, String email, String photo, List<Order> orders) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.fullname = fullname;
-		this.email = email;
-		this.photo = photo;
-		this.orders = orders;
-	}
-	public Account() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+//	public Account(String username, String password, String fullname, String email, String photo, List<Order> orders) {
+//		super();
+//		this.username = username;
+//		this.password = password;
+//		this.fullname = fullname;
+//		this.email = email;
+//		this.photo = photo;
+//		this.orders = orders;
+//	}
+//	public Account() {
+//		super();
+//		// TODO Auto-generated constructor stub
+//	}
 	
 	
 }

@@ -20,10 +20,9 @@ public class OrderServiceImpl implements OrderService{
 	@Autowired
 	OrderReponsitory orderReponsitory;
 	@Autowired
-	OrderDetailReponsitory detailReponsitory;
+	OrderDetailReponsitory orderDetailReponsitory;
 	@Override
 	public List<Order> findAll() {
-		// TODO Auto-generated method stub
 		return orderReponsitory.findAll();
 	}
 
@@ -36,19 +35,17 @@ public class OrderServiceImpl implements OrderService{
 		TypeReference<List<OrderDetail>> type=new TypeReference<List<OrderDetail>>() {};
 		List<OrderDetail> details= mapper.convertValue(orderData.get("orderDetails"),type)
 					.stream().peek(d -> d.setOrder(order)).collect(Collectors.toList());
-		detailReponsitory.saveAll(details);
+		orderDetailReponsitory.saveAll(details);
 		return order;
 	}
 
 	@Override
 	public Order findById(Long id) {
-		// TODO Auto-generated method stub
 		return orderReponsitory.findById(id).get();
 	}
 
 	@Override
 	public List<Order> findByUsername(String username) {
-		// TODO Auto-generated method stub
 		return orderReponsitory.findByUsername(username);
 	}
 	

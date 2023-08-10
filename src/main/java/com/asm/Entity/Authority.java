@@ -27,16 +27,16 @@ public class Authority  implements Serializable{
 	private Account account;
 	@ManyToOne  @JoinColumn(name = "Roleid")
 	private Role role;
-	public Authority(Integer id, Account account, Role role) {
-		super();
-		this.id = id;
-		this.account = account;
-		this.role = role;
-	}
-	public Authority() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+//	public Authority(Integer id, Account account, Role role) {
+//		super();
+//		this.id = id;
+//		this.account = account;
+//		this.role = role;
+//	}
+//	public Authority() {
+//		super();
+//		// TODO Auto-generated constructor stub
+//	}
 	
 	
 }

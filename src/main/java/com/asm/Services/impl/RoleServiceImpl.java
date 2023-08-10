@@ -16,13 +16,11 @@ public class RoleServiceImpl implements RoleService{
 
 	@Override
 	public List<Role> findAll() {
-		// TODO Auto-generated method stub
 		return reponsitory.findAll();
 	}
 
 	@Override
 	public Role getRoleByID(String id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

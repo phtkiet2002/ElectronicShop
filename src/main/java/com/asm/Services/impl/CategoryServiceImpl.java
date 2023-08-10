@@ -16,13 +16,11 @@ public class CategoryServiceImpl implements CategoryService{
 
 	@Override
 	public List<Category> findAll() {
-		// TODO Auto-generated method stub
 		return categoryReponsitory.findAll();
 	}
 
 	@Override
 	public Category getCategoryByID(String id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

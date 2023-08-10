@@ -21,16 +21,16 @@ public class Category implements Serializable{
 	@JsonIgnore
 	@OneToMany(mappedBy="category")
 	List<Product> products;
-	public Category(String id, String name, List<Product> products) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.products = products;
-	}
-	public Category() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+
+//	public Category(String id, String name, List<Product> products) {
+//		super();
+//		this.id = id;
+//		this.name = name;
+//		this.products = products;
+//	}
+//	public Category() {
+//		super();
+//	}
 	
 	
 }

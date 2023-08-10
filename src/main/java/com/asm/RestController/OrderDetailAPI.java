@@ -15,7 +15,7 @@ import com.asm.Services.OrderDetailService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("api/orderdetail")
+@RequestMapping("api/orderdetails")
 public class OrderDetailAPI {
 	@Autowired
 	OrderDetailService detailService;

@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" 
         th:replace="~{/layout/index :: dynamic(~{::main})}">
-
 <body>
-    <main>
+    <main class="container">
 		<div class = "panel panel-primary" th:fragment="shopping_cart">
 			<div class="panel-heading">SHOPPING CART</div>
 			
@@ -24,7 +23,7 @@
 					<td>{{item.name}}</td>
 					<td>${{item.price | number :2}}</td>
 					<th><input ng-change="cart.saveToLocalStorage()" ng-model="item.qty" type="number" min="1" style="width:60px">
-					<td>${{item.qty* item.price | number : 2}}</td>
+					<td>${{item.qty * item.price | number : 2}}</td>
 					<td>
 					<button ng-click="cart.remove(item.id)" class="btn btn-sm btn-dangerous">
 						<i class="glyphicon glyphicon-trash"></i>

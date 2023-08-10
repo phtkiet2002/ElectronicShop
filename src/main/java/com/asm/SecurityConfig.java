@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
 	BCryptPasswordEncoder pe;
 	
-	//Cung cap nguon du lieu dang nhap
+	//Cung cấp nguồn dữ liệu đăng nhập
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
 		auth.userDetailsService(username -> {
@@ -39,26 +39,26 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 							.collect(Collectors.toList()).toArray(new String[0]);
 							return User.withUsername(username).password(password).roles(roles).build();					
 			}catch (NoSuchElementException e) {
-				throw new UsernameNotFoundException( username + "not found!");
+				throw new UsernameNotFoundException(username + " not found!");
 			}
 		});
 		
 	}
-	//Phan quyen su dung
+	//Phân quyền sử dụng
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
 		http.csrf().disable();
 		http.authorizeRequests()
 		.antMatchers("/order/**").authenticated()
 		.antMatchers("/admin/**").hasAnyRole("STAF","DIRE")
-		.antMatchers("/rest/authorities").hasRole("DIRE")
+		.antMatchers("/api/authorities").hasRole("DIRE")
 		.anyRequest().permitAll();
 		
 		http.formLogin()
 		.loginPage("/security/login/form")
 		.loginProcessingUrl("/security/login")
-		.defaultSuccessUrl("/security/login/success",false)
-		.failureUrl("/security/login/error");
+		.defaultSuccessUrl("/home/index",false)
+		.failureUrl("/security/login/form");
 		
 		http.rememberMe()
 		.tokenValiditySeconds(86400);
@@ -71,7 +71,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.logoutSuccessUrl("/security/logoff/success");
 	}
 	
-	//Co che ma hoa mat khau
+	//Cơ chế mã hóa mật khẩu
 	@Bean
 	public BCryptPasswordEncoder getPasswordEncoder() {
 		return new BCryptPasswordEncoder();

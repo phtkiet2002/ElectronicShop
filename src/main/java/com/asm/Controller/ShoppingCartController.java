@@ -8,6 +8,6 @@ public class ShoppingCartController {
 
 	@RequestMapping("/cart/view")
 	public String view() {
-		return "home/cart";
+		return "cart/view";
 	}
 }

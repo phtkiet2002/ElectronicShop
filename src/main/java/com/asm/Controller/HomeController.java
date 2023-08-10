@@ -11,6 +11,6 @@ public class HomeController {
 	}
 	@RequestMapping({"/admin","/admin/home/index"})
 	public String admin() {
-		return "redirect:/admin/index.html";
+		return "redirect:/assets/admin/index.html";
 	}
 }
