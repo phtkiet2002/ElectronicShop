@@ -37,5 +37,35 @@ public class Order implements Serializable{
 	@JsonIgnore
 	@OneToMany(mappedBy = "order")
 	List<OrderDetail> orderDetails;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public Date getCreateDate() {
+		return createDate;
+	}
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+	public Account getAccount() {
+		return account;
+	}
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+	public List<OrderDetail> getOrderDetails() {
+		return orderDetails;
+	}
+	public void setOrderDetails(List<OrderDetail> orderDetails) {
+		this.orderDetails = orderDetails;
+	}
 	
 }
