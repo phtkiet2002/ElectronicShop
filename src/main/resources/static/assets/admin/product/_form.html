@@ -1,12 +1,13 @@
+
 <div class="panel panel-default">
 	<div class="panel-heading">PRODUCT EDITION</div>
 	<div class="panel-body">
 		<div class="row">
 			<div class="col-sm-4 text-center">
 				<label for="image">
-					<img ng-src="{{'/assets/images/' + form.image}}" style="max-width:100%;height:200px">
+					<img ng-src="{{'/assets/images/' + form.image}}" style="max-width:100%;height:200px; ">
 				</label>
-				
+
 			</div>
 			<div class="col-sm-8">
 				<div class="row">
@@ -28,7 +29,7 @@
 					<div class="form-group col-sm-6">
 						<div>Category</div>
 						<select ng-model="form.category.id" class="form-control">
-							<option ng-repeat="c in cates" ng-value="c.id">{{c.name}}</option>						
+							<option ng-repeat="c in cates" ng-value="c.id">{{c.name}}</option>
 						</select>
 					</div>
 				</div>
@@ -48,7 +49,7 @@
 							</label>
 						</div>
 					</div>
-				</div> 
+				</div>
 			</div>
 		</div>
 	</div>
