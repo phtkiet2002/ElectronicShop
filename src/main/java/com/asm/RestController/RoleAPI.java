@@ -15,7 +15,7 @@ import com.asm.Services.RoleService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("api/role")
+@RequestMapping("/api/roles")
 public class RoleAPI {
 	@Autowired
 	RoleService roleService;
@@ -23,11 +23,11 @@ public class RoleAPI {
 	// http method: GET, POST, PUT, DELETE
 
 	// localhost:8085/api/role/all
-	@GetMapping("/all")
+	@GetMapping()
 	public ResponseEntity<?> doGetAll() {
-		List<Role> categories = roleService.findAll();
+		List<Role> list = roleService.findAll();
 		// http status code: 200, 201, 202, 400, 401, 403, 404, 500
-		return ResponseEntity.ok(categories);
+		return ResponseEntity.ok(list);
 
 	}
 	

@@ -2,27 +2,25 @@ package com.asm.RestController;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.asm.Entity.Order;
 import com.asm.Services.OrderService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("api/order")
+@RequestMapping("/api/orders")
 public class OrderAPI {
 	@Autowired
 	OrderService orderService;
 	// http method: GET, POST, PUT, DELETE
 
 	// localhost:8085/api/order/all
-	@GetMapping("/all")
+	@GetMapping()
 	public ResponseEntity<?> doGetAll() {
 		List<Order> orders = orderService.findAll();
 		// http status code: 200, 201, 202, 400, 401, 403, 404, 500
@@ -30,11 +28,9 @@ public class OrderAPI {
 
 	}
 	
-	@GetMapping("/id={id}")
-	public ResponseEntity<?> getById(@RequestParam("id") Long id){
-		Order order = orderService.getOrderByID(id);
-		// http status code: 200, 201, 202, 400, 401, 403, 404, 500
+	@PostMapping()
+	public ResponseEntity<?> create(@RequestBody JsonNode orderData){
+		Order order = orderService.create(orderData);
 		return ResponseEntity.ok(order);
-				
 	}
 }

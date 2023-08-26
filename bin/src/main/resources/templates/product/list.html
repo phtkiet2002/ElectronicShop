@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+<main>
+    <section class="product_section layout_padding">
+        <div class="container">
+            <div class="heading_container heading_center">
+                <h2>Our Products</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-4" th:each="p:${items}">
+                    <div class="box">
+                        <div>
+                            <a th:href="@{|/product/detail/${p.id}|}">
+                                <img style="height:250px;" th:src="@{|/images/products/${p.image}|}">
+                            </a>
+                        </div>
+                        <div class="detail-box">
+                            <h5 th:text="${p.name}"></h5>
+                            <div class="product_info">
+                                <h5>
+                                    <span>$ </span>[[${p.price}]]
+                                </h5>
+                                <div class="star_container">
+                                    <i class="fa fa-star" aria-hidden="true"></i> <i
+                                        class="fa fa-star" aria-hidden="true"></i> <i
+                                        class="fa fa-star" aria-hidden="true"></i> <i
+                                        class="fa fa-star" aria-hidden="true"></i> <i
+                                        class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <button th:attr="ng-click=@{|cart.add(${p.id})|}" class="btn btn-success">Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_box">
+                <a href="" class="view_more-link"> View More </a>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

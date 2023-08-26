@@ -15,7 +15,7 @@ import com.asm.Services.CategoryService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("api/category")
+@RequestMapping("/api/categories")
 public class CategoriesAPI {
 	@Autowired
 	CategoryService categoryService;
@@ -23,7 +23,7 @@ public class CategoriesAPI {
 	// http method: GET, POST, PUT, DELETE
 
 	// localhost:8085/api/category/all
-	@GetMapping("/all")
+	@GetMapping()
 	public ResponseEntity<?> doGetAll() {
 		List<Category> categories = categoryService.findAll();
 		// http status code: 200, 201, 202, 400, 401, 403, 404, 500

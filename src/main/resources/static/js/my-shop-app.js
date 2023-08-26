@@ -1,6 +1,9 @@
 const app = angular.module("my-shop-app", []);
 app.controller("my-shop-ctrl", function ($scope, $http) {
+<<<<<<< HEAD
     $scope.keyword = "";
+=======
+>>>>>>> tuankiet
     //Quản lý giỏ hàng
     $scope.cart = {
         items: [],

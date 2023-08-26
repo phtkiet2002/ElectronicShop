@@ -6,6 +6,7 @@ import com.asm.Entity.Authority;
 
 public interface AuthorityService {
 	List<Authority> findAll();
-	
-	Authority getAuthorityByID(Integer id);
+	public Authority create(Authority auth);
+	public void delete(Integer id);
+	public List<Authority> findAuthoritiesOfAdministrators();
 }

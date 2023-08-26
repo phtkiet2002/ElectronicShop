@@ -18,20 +18,19 @@ public class AccountServiceImpl implements AccountService{
 	
 	@Override
 	public List<Account> findAll() {
-		// TODO Auto-generated method stub
 		return accountReponsitory.findAll();
 	}
 
 	@Override
-	public Optional<Account> findByUsernameAndPassword(String username, String password) {
-		// TODO Auto-generated method stub
-		return Optional.empty();
+	public Account findById(String username) {
+		return accountReponsitory.findById(username).get();
 	}
 
 	@Override
-	public Account getAccountByUsername(String username) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Account> getAdministrators() {
+		return accountReponsitory.getAdministrators();
 	}
+
+	
 
 }
